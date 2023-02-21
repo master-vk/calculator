@@ -42,12 +42,17 @@ Console.WriteLine("На ноль делить нельзя");
     case "m":
         Console.WriteLine($"Your result: {num1} * {num2} = " + (num1 * num2));
         break;
-    case "d":
-        Console.WriteLine($"Your result: {num1} / {num2} = " + (num1 / num2));
+    case "f":
         if (num2 == 0)
-            throw new DivideByZeroException("Попытка деления на ноль.");
+        {
+            Console.WriteLine("na 0 nie dzelimy");
+        }
+        else
+        {
+            num2 = (num1 / num2);
+            Console.WriteLine($"Your result: {num1}/{num2} = " + (num1 / num2));
+        }
         break;
-
 }
 // Wait for the user to respond before closing.
 Console.Write("Press any key to close the Calculator console app...");
