@@ -17,6 +17,7 @@ num2 = Convert.ToInt32(Console.ReadLine());
 
 // Ask the user to choose an option.
 Console.WriteLine("Choose an option from the following list:");
+// тут треба чітко по вимогам історії йти(+, -, / ...)
 Console.WriteLine("\ta - Add");
 Console.WriteLine("\ts - Subtract");
 Console.WriteLine("\tm - Multiply");
@@ -28,7 +29,7 @@ try
 }
 catch (DivideByZeroException)
 {
-Console.WriteLine("На ноль делить нельзя");
+Console.WriteLine("На ноль делить нельзя");// добре, що знаєте про існування цієї конструкції, але ж ми ще не вчили цього по перше, по друге вона у поточній реалізації не відпрацьовує
 }
     // Use a switch statement to do the math.
     switch (Console.ReadLine())
@@ -42,7 +43,7 @@ Console.WriteLine("На ноль делить нельзя");
     case "m":
         Console.WriteLine($"Your result: {num1} * {num2} = " + (num1 * num2));
         break;
-    case "f":
+    case "f":// ніколи не спрацює, бо очікуєте "f" алеж юзера просите ввести "d")))
         if (num2 == 0)
         {
             Console.WriteLine("na 0 nie dzelimy");
@@ -53,6 +54,7 @@ Console.WriteLine("На ноль делить нельзя");
             Console.WriteLine($"Your result: {num1}/{num2} = " + (num1 / num2));
         }
         break;
+            // не бачю реалізації кейса "^" звести в ступень
 }
 // Wait for the user to respond before closing.
 Console.Write("Press any key to close the Calculator console app...");
